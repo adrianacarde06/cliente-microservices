@@ -91,7 +91,7 @@ src/main/java/com/pruebatec/msclientes/
 ├── domain/                       # Núcleo de negocio (Sin dependencias de frameworks)
 │   ├── exception/                # Excepciones de negocio (ej. ClienteNotFoundException)
 │   ├── model/                    # Entidades de dominio (Cliente, Direccion)
-│   │   └── valueobject/          # Value Objects inmutables (Documento, Email, TipoDocumento)
+│   │   └── valueobject/          # Value Objects inmutables (Documento, TipoDocumento)
 │   └── ports/                    # Interfaces (Contratos)
 │       ├── in/                   # Puertos de entrada (Casos de Uso)
 │       └── out/                  # Puertos de salida (Repositorios)
@@ -99,14 +99,14 @@ src/main/java/com/pruebatec/msclientes/
 └── infrastructure/             # Adaptadores (Tecnología concreta)
     └── adapter/
         │
-        ├── in/                 # Adaptadores de Entrada (Driving)
+        ├── in/                 # Adaptadores de Entrada 
         │   └── web/            # API REST
         │       ├── dto/        # Records: ClienteRequestDTO, ClienteResponseDTO, etc.
-        │       ├── exception/  # GlobalExceptionHandler (Manejo RFC 7807)
+        │       ├── exception/  # GlobalExceptionHandler 
         │       ├── mapper/     # ClienteWebMapper (Conversión DTO <-> Dominio)
         │       └── ClienteController.java
         │
-        └── out/                # Adaptadores de Salida (Driven)
+        └── out/                # Adaptadores de Salida
             └── persistence/    # Base de datos H2
                 ├── converter/  # DocumentoConverter (VO <-> String)
                 ├── entity/     # ClienteEntity, DireccionEntity (Anotaciones JPA)
